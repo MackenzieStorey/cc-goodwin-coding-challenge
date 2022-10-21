@@ -12,8 +12,7 @@ import {
     DrawerBody,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton,
-    DrawerFooter
+    DrawerCloseButton
 } from '@chakra-ui/react';
 import { AiOutlineMenu } from "react-icons/ai";
 import NavButton from './NavButton';
@@ -28,11 +27,11 @@ const Navbar = props => {
     const {
         navbar,
         containerBackground,
-        logoMain, 
-        menuButton, 
-        mainContainer, 
-        closeButton, 
-        contentContainer 
+        logoMain,
+        menuButton,
+        mainContainer,
+        closeButton,
+        contentContainer
     } = useStyle();
     const navButtons = () => {
         if (isDesktop) {
@@ -86,9 +85,6 @@ const Navbar = props => {
                                     {navButtons()}
                                 </Flex>
                             </DrawerBody>
-                            <DrawerFooter css={containerBackground}>
-                                <Image flex="1" rounded="lg" src={logo} alt="logo ipsum" />
-                            </DrawerFooter>
                         </DrawerContent>
                     </Drawer>
                 </Box>

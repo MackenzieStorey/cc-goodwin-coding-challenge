@@ -10,7 +10,7 @@ const buildStyle = () => {
             borderBottomRightRadius: "0.375rem",
             borderWidth: "0px 1px 1px 1px",
             borderColor: "#5924ce",
-            gap: "5px",
+            gap: "0",
             background: "#E0DFD5",
             width: "100%"
         },
@@ -28,19 +28,17 @@ const buildStyle = () => {
         containerBackground: {
             background: "#E0DFD5"
         },
-        logoMain: {
-            paddingLeft: "10px",
-            paddingRight: "0.5rem"
-        },
         menuButton: {
             fontSize: "25px",
             color: "#5924ce"
         },
+        logoMain: {
+            maxWidth: "256px",
+            minWidth: "128px"
+        },
         closeButton: {
             fontSize: "15px",
-            color: "#5924ce",
-            paddingRight: "15px",
-            paddingTop: "10px"
+            color: "#5924ce"
         }
     }
 }
