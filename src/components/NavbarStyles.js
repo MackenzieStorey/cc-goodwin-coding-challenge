@@ -10,7 +10,7 @@ const buildStyle = () => {
             borderBottomRightRadius: "0.375rem",
             borderWidth: "0px 1px 1px 1px",
             borderColor: "#5924ce",
-            gap: "0",
+            gap: "1px",
             background: "#E0DFD5",
             width: "100%"
         },
