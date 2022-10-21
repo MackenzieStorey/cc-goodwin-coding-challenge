@@ -6,18 +6,17 @@ import {
     useDisclosure,
     Center,
     IconButton,
-    VStack,
     useBreakpointValue,
     Spacer,
     Drawer,
     DrawerBody,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton
+    DrawerCloseButton,
+    DrawerFooter
 } from '@chakra-ui/react';
 import { AiOutlineMenu } from "react-icons/ai";
 import NavButton from './NavButton';
-import MobileDrawer from './MobileDrawer';
 import { useStyle } from './NavbarStyles';
 import aboutUsOptions from '../config/aboutUsOptions.json'
 import servicesOptions from '../config/servicesOptions.json'
@@ -33,10 +32,10 @@ const Navbar = props => {
         }
         return (
             <>
-                <NavButton aria-label="home" text="Home" />
-                <NavButton aria-label="about us menu" text="About Us" isMenu={true} menuOptions={aboutUsOptions} />
-                <NavButton aria-label="services menu" text="Our Services" isMenu={true} menuOptions={servicesOptions} />
-                <NavButton aria-label="contact us" text="Contact Us" />
+                <NavButton isMobile={!isDesktop} aria-label="home" text="Home" />
+                <NavButton isMobile={!isDesktop} aria-label="about us menu" text="About Us" isMenu={true} menuOptions={aboutUsOptions} />
+                <NavButton isMobile={!isDesktop} aria-label="services menu" text="Our Services" isMenu={true} menuOptions={servicesOptions} />
+                <NavButton isMobile={!isDesktop} aria-label="contact us" text="Contact Us" />
             </>
         )
     }
@@ -63,17 +62,21 @@ const Navbar = props => {
                 </Flex>
                 <Drawer
                     isOpen={mobileNav.isOpen}
-                    placement='right'
+                    placement='top'
                     onClose={mobileNav.onClose}
+                    size="md"
                 >
                     <DrawerOverlay />
                     <DrawerContent>
-                        <DrawerCloseButton />
+                        <DrawerCloseButton color="#5924ce" />
                         <DrawerBody bg="#E0DFD5">
-                            <VStack>
+                            <Flex direction="column" alignItems="center">
                                 {navButtons()}
-                            </VStack>
+                            </Flex>
                         </DrawerBody>
+                        <DrawerFooter bg="#E0DFD5">
+                            <Image flex="1" rounded="lg" src={logo} alt="logo ipsum" />
+                        </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
             </Center>

@@ -11,7 +11,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useStyle } from './NavButtonStyles';
 
 const NavButton = props => {
-    const { menuList, menuButton, linkText, linkButton } = useStyle();
+    const { menuList, menuButton, linkText, linkButton } = useStyle(props.isMobile);
     const elementsRef = useRef(props.menuOptions?.map(() => createRef()));
 
     const onMenuFocus = index => {
@@ -47,7 +47,9 @@ const NavButton = props => {
                     variant="none"
                     css={menuButton}
                     rightIcon={<ChevronDownIcon alt="down" />}
-                >{props.text}</MenuButton>
+                >
+                    {props.text}
+                </MenuButton>
                 <MenuList css={menuList}>
                     {buildMenuOptions(props.menuOptions)}
                 </MenuList>
