@@ -5,7 +5,8 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    Text
+    Text,
+    Center
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useStyle } from './NavButtonStyles';
@@ -14,14 +15,21 @@ const NavButton = props => {
     const { menuList, menuButton, linkText, linkButton } = useStyle(props.isMobile);
     const elementsRef = useRef(props.menuOptions?.map(() => createRef()));
 
+    // I wanted to do this more gracefully, but this is a solution that works for now.
+    // Take a stored ref to the child text to change its color specifically for browsing with a keyboard.
     const onMenuFocus = index => {
-       elementsRef.current[index].style.color = "#5924ce";
+        elementsRef.current[index].style.color = "#5924ce";
+        elementsRef.current[index].style.textDecoration = "underline"
     }
 
-    const onMenuLeave = index => {
+    const onMenuBlur = index => {
         elementsRef.current[index].style.color = "#3f66cd";
+        elementsRef.current[index].style.textDecoration = "none"
     }
 
+    /* I could have hard-coded the options, but this allows a re-useable function to build it dynamically.
+    * If the customer wanted to add extra links to pages after the fact, all we need to do is add the new link
+    * to the options JSON. */
     const buildMenuOptions = (menuOptions) => {
         return menuOptions.map((option, index) => {
             return (
@@ -29,12 +37,17 @@ const NavButton = props => {
                     _hover={{ bgColor: "#f0efe4" }}
                     _focus={{ bgColor: "#f0efe4" }}
                     onFocus={() => onMenuFocus(index)}
-                    onBlur={() => onMenuLeave(index)}
+                    onBlur={() => onMenuBlur(index)}
                     onClick={() => window.open(option.link)}
+                    aria-label={option.text}
                     key={`${option.text}-${index}`}>
-                    <Text css={linkText} ref={el => (elementsRef.current[index] = el)}>
+                    <Text 
+                    css={linkText} 
+                    ref={el => (elementsRef.current[index] = el)}
+                    aria-label={`${option.text} link`}>
                         {option.text}
                     </Text>
+
                 </MenuItem>
             )
         });

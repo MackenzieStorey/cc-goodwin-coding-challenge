@@ -1,19 +1,11 @@
 const buildStyle = () => {
     return {
         linkText: {
-            fontColor: "#3f66cd",
-            fontSize: "18px",
-            '&:hover': {
-                textDecoration: "underline",
-                textDecorationColor: "#5924ce"
-            },
-            '&:focus': {
-                textDecoration: "underline",
-                textDecorationColor: "#5924ce"
-            }
+            color: "#3f66cd",
+            fontSize: "18px"
         },
         linkButton: {
-            fontColor: "#3f66cd",
+            color: "#3f66cd",
             fontSize: "18px",
             borderColor: "#5924ce",
             '&:hover': {
@@ -31,7 +23,7 @@ const buildStyle = () => {
         },
         menuButton: {
             fontSize: "18px",
-            fontColor: "#333333",
+            color: "#333333",
             '&:hover': {
                 color: "#696969",
                 background: "#f0efe4"
