@@ -58,6 +58,7 @@ const NavButton = props => {
                 <MenuButton
                     as={Button}
                     variant="none"
+                    aria-label={`${props.text} menu`}
                     css={menuButton}
                     rightIcon={<ChevronDownIcon alt="down" />}
                 >
@@ -73,6 +74,7 @@ const NavButton = props => {
         <Button
             variant="none"
             css={linkButton}
+            aria-label={`${props.text} link`}
             onClick={() => window.open("https://ccgoodwin.ca")}
         >{props.text}</Button>
     )

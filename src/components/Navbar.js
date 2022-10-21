@@ -79,7 +79,7 @@ const Navbar = props => {
                     >
                         <DrawerOverlay />
                         <DrawerContent>
-                            <DrawerCloseButton css={closeButton} />
+                            <DrawerCloseButton css={closeButton} aria-label="Close menu"/>
                             <DrawerBody css={containerBackground}>
                                 <Flex direction="column" alignItems="center">
                                     {navButtons()}
