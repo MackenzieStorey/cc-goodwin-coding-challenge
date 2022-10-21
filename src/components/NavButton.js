@@ -60,7 +60,7 @@ const NavButton = props => {
                     variant="none"
                     aria-label={`${props.text} menu`}
                     css={menuButton}
-                    rightIcon={<ChevronDownIcon alt="down" />}
+                    rightIcon={<ChevronDownIcon aria-label="down arrow" name="down arrow" alt="down" />}
                 >
                     {props.text}
                 </MenuButton>
