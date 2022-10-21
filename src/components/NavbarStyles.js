@@ -6,7 +6,6 @@ const buildStyle = () => {
             paddingRight: "18px",
             paddingBottom: "10px",
             paddingTop: "10px",
-            maxWidth: "1280px",
             borderBottomLeftRadius: "0.375rem",
             borderBottomRightRadius: "0.375rem",
             borderWidth: "0px 1px 1px 1px",
@@ -19,6 +18,12 @@ const buildStyle = () => {
             minHeight: "100vh",
             minWidth: "100vw",
             background: "#E8E9EB"
+        },
+        contentContainer: {
+            paddingLeft: "18px",
+            paddingRight: "18px",
+            maxWidth: "1280px",
+            width: "100%"
         },
         containerBackground: {
             background: "#E0DFD5"
@@ -51,6 +56,9 @@ export const useStyle = () => {
         },
         containerBackground: {
             ...styles.containerBackground
+        },
+        contentContainer: {
+            ...styles.contentContainer
         },
         logoMain: {
             ...styles.logoMain
