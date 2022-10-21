@@ -5,8 +5,7 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    Text,
-    Center
+    Text
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useStyle } from './NavButtonStyles';
