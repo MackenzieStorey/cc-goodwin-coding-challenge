@@ -28,8 +28,14 @@ const buildStyle = () => {
             paddingRight: "0.5rem"
         },
         menuButton: {
-            fontSize: "20px",
+            fontSize: "25px",
             color: "#5924ce"
+        },
+        closeButton: {
+            fontSize: "15px",
+            color: "#5924ce",
+            paddingRight: "15px",
+            paddingTop: "10px"
         }
     }
 }
@@ -51,6 +57,9 @@ export const useStyle = () => {
         },
         menuButton: {
             ...styles.menuButton
+        },
+        closeButton: {
+            ...styles.closeButton
         }
     }
 }

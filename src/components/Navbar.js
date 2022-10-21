@@ -25,7 +25,7 @@ import logo from '../logo.svg';
 const Navbar = props => {
     const mobileNav = useDisclosure();
     const isDesktop = useBreakpointValue({ base: false, md: true });
-    const { navbar, containerBackground, logoMain, menuButton, mainContainer } = useStyle();
+    const { navbar, containerBackground, logoMain, menuButton, mainContainer, closeButton } = useStyle();
     const navButtons = () => {
         if (isDesktop) {
             mobileNav.isOpen = false;
@@ -71,7 +71,7 @@ const Navbar = props => {
                 >
                     <DrawerOverlay />
                     <DrawerContent>
-                        <DrawerCloseButton css={menuButton} />
+                        <DrawerCloseButton css={closeButton} />
                         <DrawerBody css={containerBackground}>
                             <Flex direction="column" alignItems="center">
                                 {navButtons()}
